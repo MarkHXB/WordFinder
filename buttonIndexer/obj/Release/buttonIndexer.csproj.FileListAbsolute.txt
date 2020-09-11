@@ -1,0 +1,9 @@
+C:\Users\bakon\source\repos\buttonIndexer\bin\Release\buttonIndexer.exe.config
+C:\Users\bakon\source\repos\buttonIndexer\bin\Release\buttonIndexer.exe
+C:\Users\bakon\source\repos\buttonIndexer\bin\Release\buttonIndexer.pdb
+C:\Users\bakon\source\repos\buttonIndexer\obj\Release\buttonIndexer.Form1.resources
+C:\Users\bakon\source\repos\buttonIndexer\obj\Release\buttonIndexer.Properties.Resources.resources
+C:\Users\bakon\source\repos\buttonIndexer\obj\Release\buttonIndexer.csproj.GenerateResource.cache
+C:\Users\bakon\source\repos\buttonIndexer\obj\Release\buttonIndexer.csproj.CoreCompileInputs.cache
+C:\Users\bakon\source\repos\buttonIndexer\obj\Release\buttonIndexer.exe
+C:\Users\bakon\source\repos\buttonIndexer\obj\Release\buttonIndexer.pdb
