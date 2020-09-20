@@ -7,3 +7,4 @@ C:\Users\bakon\source\repos\buttonIndexer\obj\Release\buttonIndexer.csproj.Gener
 C:\Users\bakon\source\repos\buttonIndexer\obj\Release\buttonIndexer.csproj.CoreCompileInputs.cache
 C:\Users\bakon\source\repos\buttonIndexer\obj\Release\buttonIndexer.exe
 C:\Users\bakon\source\repos\buttonIndexer\obj\Release\buttonIndexer.pdb
+C:\Users\bakon\source\repos\buttonIndexer\obj\Release\buttonIndexer.csprojAssemblyReference.cache

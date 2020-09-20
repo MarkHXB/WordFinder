@@ -16,7 +16,7 @@ namespace buttonIndexer
         public List<ListHandling> buttons = new List<ListHandling>();
         public List<string> words = new List<string>();
         public List<string> completedWords = new List<string>();
-        public List<ButtonHandler> buttonHandling = new List<ButtonHandler>();
+        public List<ListHandling> buttonHandling = new List<ListHandling>();
 
         //public variables
         public bool reapirAble = true;
@@ -31,10 +31,12 @@ namespace buttonIndexer
 
         public Form1()
         {
-            InitializeComponent();
-            
+            MainStyle();
         }
-
+        private void MainStyle()
+        {
+            InitializeComponent();
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             loadTheButtonList(buttons);
@@ -48,7 +50,7 @@ namespace buttonIndexer
             words.Add("unique");
             words.Add("umbrella");
             words.Add("task");
-            foreach (var word in words)
+            foreach (string word in words)
             {
                 listView1.Items.Add(word);
             }
@@ -84,14 +86,6 @@ namespace buttonIndexer
             buttons.Add(new ListHandling(button26));
             buttons.Add(new ListHandling(button27));
         }
-        private void közös_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
         private void becomeUnable(Button button)
         {
             if (!reapirAble)
@@ -111,24 +105,25 @@ namespace buttonIndexer
             {
                 MessageBox.Show("Helyes");
                 reapirAble = false;
-                foreach (var item in buttons)
+                foreach (ListHandling item in buttons)
                 {
-                    item.currentButton.BackColor = defaultButtonColor;
+                    if(item != null)
+                        item.currentButton.BackColor = defaultButtonColor;
                 }
                 textBox1.Text = "";
             }
             else
             {
                 textBox1.Text = "";
-                foreach (var item in buttons)
+                foreach (ListHandling item in buttons)
                 {
                     item.currentButton.BackColor = defaultButtonColor;
                 }
-                foreach (ButtonHandler item in buttonHandling)
+                foreach (ListHandling item in buttonHandling)
                 {
-                    if(item.Button.Visible == false)
+                    if(item.currentButton.Visible == false)
                     {
-                        item.Button.Visible = true;
+                        item.currentButton.Visible = true;
                     }
                 }
             }
@@ -147,38 +142,31 @@ namespace buttonIndexer
                     voltTalalat = true;
                     textBox1.Text = "";
                 }
-                buttons[counter].currentButton.BackColor = defaultButtonColor;
-                counter++;
+                buttons[counter++].currentButton.BackColor = defaultButtonColor;
             }
             if (!voltTalalat)
             {
                 textBox1.Text = "";
-                foreach (var item in buttons)
+                foreach (ListHandling item in buttons)
                 {
                     item.currentButton.BackColor = defaultButtonColor;
                 }
-                foreach (ButtonHandler item in buttonHandling)
+                foreach (ListHandling item in buttonHandling)
                 {
-                    if (item.Button.Visible == false)
+                    if (item.currentButton.Visible == false)
                     {
-                        item.Button.Visible = true;
+                        item.currentButton.Visible = true;
                     }
                 }
             }
         }
-
-        private void FillButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
             Random r = new Random();
 
             reapirAble = true;
 
-            foreach (var item in buttons)
+            foreach (ListHandling item in buttons)
             {
                 item.currentButton.BackColor = Color.Blue;
                 item.currentButton.Enabled = true;
@@ -264,14 +252,9 @@ namespace buttonIndexer
 
             Button button = (Button)sender;
 
-            buttonHandling.Add(new ButtonHandler(button));
+            buttonHandling.Add(new ListHandling(button));
 
             becomeUnable(button);
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void playButton_Click(object sender, EventArgs e)
